@@ -1,0 +1,41 @@
+function extraer() {
+    local  e i
+ 
+    (($#)) || return
+ 
+    for i; do
+        c=''
+        e=1
+ 
+        if [[ ! -r $i ]]; then
+            echo "$0: archivo de legible: \`$i'" >&2
+            continue
+        fi
+ 
+        case $i in
+        *.7z)  7z x $i 
+        echo -e "Descomprimido";;
+        *.Z)   uncompress $i 
+        echo -e "Descomprimido";;
+        *.bz2) bunzip2 $i 
+        echo -e "Descomprimido";;
+        *.exe) cabextract $i 
+        echo -e "Descomprimido";;
+		*.tar.gz) tar xzf $i
+        echo -e "Descomprimido" ;;
+		*.tgz) tar zxvf $i 
+        echo -e "Descomprimido";;
+        *.gz)  gunzip $i 
+        echo -e "Descomprimido";;
+        *.rar) unrar x $i 
+        echo -e "Descomprimido";;
+        *.xz)  unxz $i 
+        echo -e "Descomprimido";;
+        *.zip) unzip $i 
+        echo -e "Descomprimido";;
+        *)     echo "$0: A extension non se recoñeceu: \`$i'" >&2
+               continue;;
+        esac
+
+    done
+}

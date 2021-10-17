@@ -1,0 +1,6 @@
+# alias
+
+alias DIRJ=$HOME/.$USER
+alias proxectos=$HOME/.$USER/Proxectos
+alias scripts=$HOME/.$USER/scripts
+alias lisa='ls -lisa'
