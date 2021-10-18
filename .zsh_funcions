@@ -1,3 +1,7 @@
+#Javier Fernández Febrero
+
+# Extrae casi todas as compresions
+
 function extraer() {
     local  e i
  
@@ -38,4 +42,20 @@ function extraer() {
         esac
 
     done
+}
+
+# Indica a ip do contenedor indicado
+
+ipdocker(){
+
+    docker inspect $1 | grep 'IPAddress' 
+    # docker inspect --format '{{ .NetworkSettings.IPAddress }}' $1
+    
+}
+
+#fai un ADD e un COMMIt to texto que lle pasemos
+
+commit(){
+    git add .
+    git commit -m $1
 }
