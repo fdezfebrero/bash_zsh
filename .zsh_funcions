@@ -1,5 +1,16 @@
 #Javier Fernández Febrero
 
+# Comando de axuda que mostra as funcions
+
+axuda(){
+echo ""
+echo "-   extraer()"
+echo "-   ipdocker()"
+echo "-   commit()"
+echo "-   apdf()"
+    
+}
+
 # Extrae casi todas as compresions
 
 function extraer() {
@@ -53,9 +64,18 @@ ipdocker(){
     
 }
 
-#fai un ADD e un COMMIt to texto que lle pasemos
+# fai un ADD e un COMMIt to texto que lle pasemos
 
 commit(){
     git add .
     git commit -m $1
+}
+
+
+# converta a pdf o archivo que se lle pase
+
+apdf(){
+
+lowriter --convert-to pdf $1
+    
 }
