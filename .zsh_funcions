@@ -1,4 +1,6 @@
+#
 #Javier Fernández Febrero
+#
 
 # Comando de axuda que mostra as funcions
 
@@ -55,6 +57,10 @@ function extraer() {
     done
 }
 
+##
+## Docker 
+##
+
 # Indica a ip do contenedor indicado
 
 ipdocker(){
@@ -63,6 +69,19 @@ ipdocker(){
     # docker inspect --format '{{ .NetworkSettings.IPAddress }}' $1
     
 }
+
+edocker(){
+    if [[ docker exec -it $1 bash ]];then
+        echo " "
+    else
+        docker exec -it $1 sh
+    fi
+}
+
+
+
+##
+##
 
 # fai un ADD e un COMMIt to texto que lle pasemos
 
