@@ -71,7 +71,7 @@ ipdocker(){
 }
 
 edocker(){
-    if [[ docker exec -it $1 bash ]];then
+    if [ docker exec -it $1 bash ];then
         echo " "
     else
         docker exec -it $1 sh
