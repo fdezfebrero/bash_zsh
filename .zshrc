@@ -10,10 +10,20 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/javier/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # exportar PATH
-export PATH="$PATH:/snap/bin:/home/javier/.javier/scripts/scripts"
+
+# dependendo si e mac ou linux
+if [  $(uname) = "Linux"  ];
+then
+  export PATH="$PATH:/snap/bin:$HOME/.$USER/scripts/scripts"
+fi
+
+if [  $(uname) = "Darwin"  ];
+then
+  export PATH="$PATH:$HOME/.$USER/scripts/scripts"
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
