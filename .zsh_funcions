@@ -98,3 +98,11 @@ apdf(){
 lowriter --convert-to pdf $1
     
 }
+
+iterm(){
+    /Applications/iTerm.app/Contents/MacOS/./iTerm2 &
+
+    if [$1]; then
+        /Applications/iTerm.app/Contents/MacOS/./iTerm2 $1 &
+    fi
+}
