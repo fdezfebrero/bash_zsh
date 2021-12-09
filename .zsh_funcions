@@ -11,6 +11,7 @@ echo "-   comprimir()"
 echo "-   ipdocker()"
 echo "-   commit()"
 echo "-   apdf()"
+echo "-   actualizar()"
     
 }
 
@@ -110,4 +111,21 @@ iterm(){
     if [$1]; then
         /Applications/iTerm.app/Contents/MacOS/./iTerm2 $1 &
     fi
+}
+
+
+actualizar(){
+
+if [ $(uname) = "Linux" ];then
+    sudo flatpak update -y
+    sudo snap refresh
+    sudo apt update
+    sudo apt upgrade
+fi
+
+if [ $(uname) = "Darwin" ];then
+   brew update
+fi
+
+    
 }
