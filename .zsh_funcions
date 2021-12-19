@@ -59,8 +59,65 @@ function extraer() {
     done
 }
 
-function comprimir(){
-    tar -cvf $1 $2
+function comprimir() {
+    tar_defecto(){
+    tar -cvf fernandez_febrero_javier.tar $2
+    }
+
+    tar(){
+          tar -cvf $1 $2
+    }
+
+    zip(){
+    zip fernandez_febrero_javier $1
+    }
+
+    zip_normal(){
+    zip fernandez_febrero_javier $1
+    }
+
+    Help(){
+     # Display Help
+       echo "comprime en zip e tar"
+       echo
+       echo "Syntax: scriptTemplate [-h|t|z]"
+       echo "options:"
+       echo "z     comprime en zip con nome de archico por defecto"
+       echo "v     comprime en zip con nome de archico e a ruta"
+       echo "n     comprime con tar debes indica nome e archivos"
+       echo "t     comprime en tar con nome do archivo por defecto por defecto"
+       echo
+    }
+
+    while getopts ":h,n,z,v,t" option; do
+        case $option in
+            h) #
+                Help
+                exit;;
+            n)
+                tar $1 $2
+                exit
+                ;;
+            z)
+                zip $1
+                exit
+                ;;
+            v)
+                zip_normal $1 $2
+                exit
+                ;;
+            t)
+                tar_defecto $1
+                exit
+                ;;
+            \?) #
+                echo "Error"
+                exit;;
+        esac
+        done
+
+     tar -cvf $1 $2
+  
 }
 
 ##
@@ -128,4 +185,36 @@ if [ $(uname) = "Darwin" ];then
 fi
 
     
+}
+
+arrincar(){
+
+    cd ~/.$USER/Proxectos
+    ls >> repos.txt
+
+    cp repos.txt repos.txt.tmp 
+    sed '$ d' repos.txt.tmp > repos.txt
+    rm -f repos.txt.tmp
+
+
+    echo "${GREEN}Comprobando repos activos${END}"
+
+
+    while IFS= read -r line
+    do
+      cd ~/.$USER/Proxectos/$line
+      git pull
+      echo "${GREEN}Baixaronse os novos cambios do repo $line${END}"
+    done < repos.txt
+
+
+    cd ~/.$USER/Proxectos
+    rm repos.txt
+
+
+    cd ~/.$USER/scripts/scripts
+    git pull
+    echo "${GREEN}Baixaronse os novos cambios dos Scripts${END}"
+
+        
 }
