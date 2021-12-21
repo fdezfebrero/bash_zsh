@@ -203,7 +203,7 @@ arrincar(){
     while IFS= read -r line
     do
       cd ~/.$USER/Proxectos/$line
-      git pull
+      git pull >> /dev/null
       echo "${GREEN}Baixaronse os novos cambios do repo $line${END}"
     done < repos.txt
 
@@ -213,7 +213,7 @@ arrincar(){
 
 
     cd ~/.$USER/scripts/scripts
-    git pull
+    git pull >> /dev/null
     echo "${GREEN}Baixaronse os novos cambios dos Scripts${END}"
 
         
