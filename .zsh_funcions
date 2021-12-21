@@ -215,6 +215,7 @@ arrincar(){
     cd ~/.$USER/scripts/scripts
     git pull >> /dev/null
     echo "${GREEN}Baixaronse os novos cambios dos Scripts${END}"
+    cd
 
         
 }
