@@ -4,6 +4,7 @@
 
 # Comando de axuda que mostra as funcions
 
+
 axuda(){
 echo ""
 echo "-   extraer()"
@@ -218,4 +219,13 @@ arrincar(){
     cd
 
         
+}
+
+gitconfig (){
+    source $HOME/.$USER/scripts/scripts/funcions
+    if [ $2  ];then
+        git remote set-url origin https://${GHP2}@github.com/javierfdezfebrero/$1.git
+    else
+        git remote set-url origin https://${GHP}@github.com/fdezfebrero/$1.git
+    fi
 }
