@@ -229,3 +229,7 @@ gitconfig (){
         git remote set-url origin https://${GHP}@github.com/fdezfebrero/$1.git
     fi
 }
+
+ff(){
+    ssh u106884634@access895375647.webspace-data.io -p 22
+}
