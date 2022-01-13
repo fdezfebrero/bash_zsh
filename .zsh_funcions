@@ -221,13 +221,20 @@ arrincar(){
         
 }
 
-gitconfig (){
+githubconfig (){
     source $HOME/.$USER/scripts/scripts/funcions
     if [ $2  ];then
         git remote set-url origin https://${GHP2}@github.com/javierfdezfebrero/$1.git
     else
         git remote set-url origin https://${GHP}@github.com/fdezfebrero/$1.git
     fi
+}
+
+gitlabconfig (){
+    source $HOME/.$USER/scripts/scripts/funcions
+   
+    git remote set-url origin https://Javier_token:${GHP_LAB}@gitlab.com/FFebrero/$1.git
+    
 }
 
 ff(){
