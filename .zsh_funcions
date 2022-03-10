@@ -13,6 +13,11 @@ echo "-   ipdocker()"
 echo "-   commit()"
 echo "-   apdf()"
 echo "-   actualizar()"
+echo "-   arrincar()"
+echo "-   githubconfig()"
+echo "-   gitlabconfig()"
+echo "-   ff()"
+
     
 }
 
@@ -135,10 +140,10 @@ ipdocker(){
 }
 
 edocker(){
-    if [ docker exec -it $1 bash ];then
+    if [ docker exec -it $1 /bin/bash ];then
         echo " "
     else
-        docker exec -it $1 sh
+        docker exec -it $1 /bin/sh
     fi
 }
 
@@ -239,4 +244,26 @@ gitlabconfig (){
 
 ff(){
     ssh u106884634@access895375647.webspace-data.io -p 22
+}
+
+accesosDirectos(){
+    echo "
+    Para crear un archivo .desktop hemos de crear un documento en blanco ( fácil con Gedit, Nano, Kate o cualquier editor de textos básico) y escribir los siguientes campos:
+   
+[ Desktop Entry ]
+Encoding = UTF- 8
+Version = 1.0
+Type = Application
+Terminal = false
+Exec = Dirección del archivo o ejecutable
+Name= Nombre que recibirá la aplicación
+Icon= Dirección del icono que vamos a utilizar
+
+Copiar el archivo a la siguiente carpeta del sistema: ~/.local/share/applications
+
+De nada, crack.
+
+"
+
+
 }
