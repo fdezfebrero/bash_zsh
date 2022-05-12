@@ -19,6 +19,7 @@ echo "-   gitlabconfig()"
 echo "-   ff()"
 echo "-   accesosDirectos()"
 echo "-   wpscan --url https://target.tld/ --enumerate u (comproba webs wp)"
+echo "-   axudaGit()"
 
     
 }
@@ -268,4 +269,9 @@ De nada, crack.
 "
 
 
+}
+
+axudaGit(){
+    echo "Axuda con erros de Git:"
+    echo "Error por diferentes historias de git=> --allow-unrelated-histories"
 }
