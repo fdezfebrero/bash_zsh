@@ -17,6 +17,8 @@ echo "-   arrincar()"
 echo "-   githubconfig()"
 echo "-   gitlabconfig()"
 echo "-   ff()"
+echo "-   accesosDirectos()"
+echo "-   wpscan --url https://target.tld/ --enumerate u (comproba webs wp)"
 
     
 }
